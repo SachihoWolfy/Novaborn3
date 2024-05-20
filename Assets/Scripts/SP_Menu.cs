@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using Photon.Pun;
 
 public class SP_Menu : MonoBehaviour
 
