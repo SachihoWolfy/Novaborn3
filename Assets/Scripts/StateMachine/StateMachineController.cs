@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StateController : MonoBehaviour
 {
-    State current_state;
+    public State current_state;
     void ChangeStateTo(State state)
     {
         current_state.ExitState();
