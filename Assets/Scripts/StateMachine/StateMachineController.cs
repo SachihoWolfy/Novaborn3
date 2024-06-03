@@ -4,21 +4,35 @@ using UnityEngine;
 
 public class StateController : MonoBehaviour
 {
-    public State current_state;
-    void ChangeStateTo(State state)
+    public Entity controlled_entity;
+    State current_state;
+
+    public State falling = new Falling();
+    public State idle = new Idle();
+    public State walk = new Walk();
+    public State sprint = new Sprint();
+    public State jump = new Jump();
+
+    public void ChangeStateTo(State state)
     {
-        current_state.ExitState();
+        current_state.ExitState(this);
         current_state = state;
-        current_state.EnterState();
+        current_state.EnterState(this);
     }
 
-    State GetCurrentState()
+    public State GetCurrentState()
     {
         return current_state;
     }
 
-    void Update()
+    void Start()
     {
-        current_state.UpdateState();
+        current_state = idle;
+    }
+
+    void FixedUpdate()
+    {
+        current_state.UpdateState(this);
+        Debug.Log(current_state);
     }
 }
