@@ -11,9 +11,10 @@ public class Jump : State
     public override void UpdateState(StateController controller)
     {
         Entity entity = controller.controlled_entity;
-        entity.rb.velocity = new Vector3(entity.rb.velocity.x, 0f, entity.rb.velocity.z);
-        Vector3 force = new Vector3(0f, entity.jump_force, 0f);
-        entity.rb.AddForce(force, ForceMode.Impulse);
+        Vector3 entry_vel = entity.rb.velocity;
+        entity.rb.velocity = Vector3.zero;
+        entity.rb.AddForce(entity.transform.up * entity.jump_force, ForceMode.Impulse);
+        entity.rb.velocity = new Vector3(entry_vel.x, entity.rb.velocity.y, entry_vel.z);
         controller.ChangeStateTo(controller.falling);
     }
     public override void ExitState(StateController controller)
