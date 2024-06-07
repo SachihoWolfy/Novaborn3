@@ -23,14 +23,22 @@ public class Entity : MonoBehaviour
     #region Groundcheck
     public bool IsGrounded()
     {
-        float ray_length = collider_component.bounds.size.y + .2f;
+        float ray_length = collider_component.bounds.size.y/2 + .2f;
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, ray_length, ~layer_mask)) return true;
-        else return false;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, ray_length, ~layer_mask))
+        {
+            Debug.DrawRay(transform.position, -Vector3.up * ray_length, Color.green);
+            return true;
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, -Vector3.up * ray_length, Color.red);
+            return false;
+        }
     }
     public Vector3 GroundAngle()
     {
-        float ray_length = collider_component.bounds.size.y + .2f;
+        float ray_length = collider_component.bounds.size.y/2 + .2f;
         RaycastHit hit;
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, ray_length, ~layer_mask);
         return hit.normal;

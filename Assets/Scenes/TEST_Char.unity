@@ -725,6 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 50
   player: {fileID: 1967644916}
+  camPos: {fileID: 1521617418}
 --- !u!1001 &968858571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -994,6 +995,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1521617418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7929223882748731631, guid: 57041f280b7bc714e86c8701bdca0b62, type: 3}
+  m_PrefabInstance: {fileID: 968858571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1741582614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fd5a57f498a10d24dac499792367862e, type: 3}

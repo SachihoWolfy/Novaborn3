@@ -9,6 +9,7 @@ public class PlayerCam : MonoBehaviour
     float rotation_x;
     float rotation_y;
     public GameObject player;
+    public GameObject camPos;
 
     void Start()
     {
@@ -18,7 +19,15 @@ public class PlayerCam : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = player.transform.position;
+        // This if-else statement and the new "camPos" variable is because I'm lazy. This shouldn't break anything.
+        if(camPos != null)
+        {
+            transform.position = camPos.transform.position;
+        }
+        else
+        {
+            transform.position = player.transform.position;
+        }
         float mouse_x = Input.GetAxisRaw("Mouse X") * sensitivity * Time.deltaTime;
         float mouse_y = Input.GetAxisRaw("Mouse Y") * sensitivity * Time.deltaTime;
 
