@@ -6,7 +6,8 @@ public class Idle : State
 {
     public override void EnterState(StateController controller)
     {
-        controller.controlled_entity.rb.drag = 1f;
+        controller.controlled_entity.rb.drag = 10f;
+        controller.controlled_entity.rb.useGravity = false;
     }
     public override void UpdateState(StateController controller)
     {
@@ -18,5 +19,6 @@ public class Idle : State
     public override void ExitState(StateController controller)
     {
         controller.controlled_entity.rb.drag = 0f;
+        controller.controlled_entity.rb.useGravity = true;
     }
 }

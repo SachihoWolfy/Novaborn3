@@ -13890,7 +13890,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396166179}
   serializedVersion: 4
-  m_Mass: 10
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -14026,7 +14026,7 @@ MonoBehaviour:
   layer_mask: 0
   move_speed: 10
   sprint_speed: 20
-  jump_force: 100
+  jump_force: 10
   input_direction: {x: 0, y: 0, z: 0}
   collider_component: {fileID: 1396166182}
 --- !u!1 &1423432897

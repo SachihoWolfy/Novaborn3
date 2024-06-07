@@ -6,6 +6,7 @@ public class Jump : State
 {
     public override void EnterState(StateController controller)
     {
+        controller.controlled_entity.rb.drag = 0f;
         controller.ChangeStateTo(controller.idle);
         Entity entity = controller.controlled_entity;
         Vector3 force = new Vector3(0f, entity.jump_force, 0f);
@@ -17,6 +18,6 @@ public class Jump : State
     }
     public override void ExitState(StateController controller)
     {
-        return;
+        controller.controlled_entity.rb.drag = 0f;
     }
 }

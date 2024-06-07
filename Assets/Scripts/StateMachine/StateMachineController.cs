@@ -33,6 +33,5 @@ public class StateController : MonoBehaviour
     void FixedUpdate()
     {
         current_state.UpdateState(this);
-        Debug.Log(current_state);
     }
 }
