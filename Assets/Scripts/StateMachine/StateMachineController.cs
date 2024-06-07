@@ -32,6 +32,15 @@ public class StateController : MonoBehaviour
 
     void FixedUpdate()
     {
+        //current_state.UpdateState(this);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("You Pressed Space");
+        }
         current_state.UpdateState(this);
     }
 }
