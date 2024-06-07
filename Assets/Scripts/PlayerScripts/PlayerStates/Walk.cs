@@ -23,7 +23,7 @@ public class Walk : State
         Vector3 fixed_velocity = (desired_velocity + entity.rb.velocity).normalized * entity.move_speed;
         entity.rb.AddForce(desired_velocity * 10f);
         if(current_velocity.magnitude > entity.move_speed)
-            entity.rb.velocity = fixed_velocity;
+            entity.rb.velocity = new Vector3(fixed_velocity.x, entity.rb.velocity.y, fixed_velocity.z);
     }
     public override void ExitState(StateController controller)
     {
