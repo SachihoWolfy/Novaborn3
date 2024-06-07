@@ -19,12 +19,11 @@ public class Sprint : State
 
         Vector3 move_direction = Vector3.ProjectOnPlane(entity.input_direction, entity.GroundAngle()).normalized;
         Vector3 desired_velocity = move_direction * entity.sprint_speed;
+        Vector3 current_velocity = new Vector3(entity.rb.velocity.x, 0f, entity.rb.velocity.z);
         Vector3 fixed_velocity = (desired_velocity + entity.rb.velocity).normalized * entity.sprint_speed;
         entity.rb.AddForce(desired_velocity * 10f);
-        if(entity.rb.velocity.magnitude > entity.sprint_speed)
+        if(current_velocity.magnitude > entity.sprint_speed)
             entity.rb.velocity = fixed_velocity;
-        if (entity.rb.velocity.y > 0)
-            entity.rb.AddForce(Vector3.down * 80f, ForceMode.Force);
     }
     public override void ExitState(StateController controller)
     {
