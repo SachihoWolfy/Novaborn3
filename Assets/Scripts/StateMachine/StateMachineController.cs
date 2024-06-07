@@ -18,6 +18,7 @@ public class StateController : MonoBehaviour
         current_state.ExitState(this);
         current_state = state;
         current_state.EnterState(this);
+        StateDebugHud.instance.UpdateState(current_state.ToString());
     }
 
     public State GetCurrentState()
@@ -32,15 +33,12 @@ public class StateController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // This breaks on High FPS as it will only update at 50 Times a second. Avoid Updating the state on Fixed Update. 
         //current_state.UpdateState(this);
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("You Pressed Space");
-        }
         current_state.UpdateState(this);
     }
 }
