@@ -14023,12 +14023,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1396166180}
+  collider_component: {fileID: 1396166182}
   layer_mask: 0
   move_speed: 10
   sprint_speed: 20
-  jump_force: 10
+  jump_force: 20
   input_direction: {x: 0, y: 0, z: 0}
-  collider_component: {fileID: 1396166182}
 --- !u!1 &1423432897
 GameObject:
   m_ObjectHideFlags: 0

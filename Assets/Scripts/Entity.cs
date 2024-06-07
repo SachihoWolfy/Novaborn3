@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    [Header("Components")]
+    #region Components
     public Rigidbody rb;
+    public Collider collider_component;
     public int layer_mask;
+    #endregion
 
-    [Header("Stats")]
+    #region Stats
     public float move_speed = 100;
     public float sprint_speed = 200;
     public float jump_force = 250;
+    #endregion
 
-    [Header("Inputs")]
+    #region Input
     public Vector3 input_direction;
+    #endregion
 
-    [Header("GroundCheck")]
-    public Collider collider_component;
+    #region Groundcheck
     public bool IsGrounded()
     {
         float ray_length = collider_component.bounds.size.y + .2f;
@@ -32,4 +35,5 @@ public class Entity : MonoBehaviour
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, ray_length, ~layer_mask);
         return hit.normal;
     }
+    #endregion
 }
