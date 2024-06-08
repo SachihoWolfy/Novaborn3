@@ -33,8 +33,7 @@ public class StateController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // This breaks on High FPS as it will only update at 50 Times a second. Avoid Updating the state on Fixed Update. 
-        //current_state.UpdateState(this);
+        current_state.FixedUpdateState(this);
     }
 
     private void Update()

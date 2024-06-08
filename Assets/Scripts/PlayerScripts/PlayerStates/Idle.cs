@@ -16,6 +16,10 @@ public class Idle : State
         if(controller.controlled_entity.input_direction != Vector3.zero) controller.ChangeStateTo(controller.walk);
         if(Input.GetButtonDown("Jump")) controller.ChangeStateTo(controller.jump);
     }
+    public override void FixedUpdateState(StateController controller)
+    {
+        return;
+    }
     public override void ExitState(StateController controller)
     {
         controller.controlled_entity.rb.drag = 0f;

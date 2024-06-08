@@ -17467,6 +17467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 100
   player: {fileID: 1396166179}
+  camPos: {fileID: 0}
 --- !u!81 &1923523719
 AudioListener:
   m_ObjectHideFlags: 0
@@ -18455,6 +18456,14 @@ PrefabInstance:
     - target: {fileID: 7589264175721360574, guid: 57041f280b7bc714e86c8701bdca0b62, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068596761096033658, guid: 57041f280b7bc714e86c8701bdca0b62, type: 3}
+      propertyPath: move_speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068596761096033658, guid: 57041f280b7bc714e86c8701bdca0b62, type: 3}
+      propertyPath: sprint_speed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -6,7 +6,6 @@ public class Jump : State
 {
     public override void EnterState(StateController controller)
     {
-        Debug.Log("Attempting Jump");
         controller.controlled_entity.rb.drag = 0f;
         Entity entity = controller.controlled_entity;
         Vector3 entry_vel = entity.rb.velocity;
@@ -16,6 +15,10 @@ public class Jump : State
         controller.ChangeStateTo(controller.falling);
     }
     public override void UpdateState(StateController controller)
+    {
+        return;
+    }
+    public override void FixedUpdateState(StateController controller)
     {
         return;
     }
