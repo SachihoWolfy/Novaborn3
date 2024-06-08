@@ -11,9 +11,10 @@ public class Entity : MonoBehaviour
     #endregion
 
     #region Stats
-    public float move_speed = 100;
-    public float sprint_speed = 200;
-    public float jump_force = 250;
+    public float move_speed = 10;
+    public float sprint_speed = 20;
+    public float jump_force = 30;
+    public float air_control = .5f;
     #endregion
 
     #region Input

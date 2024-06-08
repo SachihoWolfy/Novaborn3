@@ -14,7 +14,7 @@ public class Falling : State
     {
         Entity entity = controller.controlled_entity;
         if(entity.IsGrounded()) controller.ChangeStateTo(controller.idle);
-        desired_velocity = entity.input_direction * entity.move_speed;
+        desired_velocity = entity.input_direction * entity.move_speed * entity.air_control;
         current_velocity = new Vector3(entity.rb.velocity.x, 0f, entity.rb.velocity.z);
         fixed_velocity = (desired_velocity + entity.rb.velocity).normalized * entity.sprint_speed;
         if(entity.rb.velocity.magnitude > entity.sprint_speed)
@@ -23,7 +23,7 @@ public class Falling : State
     public override void FixedUpdateState(StateController controller)
     {
         Entity entity = controller.controlled_entity;
-        entity.rb.AddForce(desired_velocity * 100f * Time.deltaTime);
+        entity.rb.AddForce(desired_velocity * 10f);
     }
     public override void ExitState(StateController controller)
     {
