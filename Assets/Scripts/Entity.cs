@@ -44,5 +44,37 @@ public class Entity : MonoBehaviour
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, ray_length, ~layer_mask);
         return hit.normal;
     }
+    public bool IsWalling()
+    {
+        float ray_length = collider_component.bounds.size.y / 2 + .2f;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, ray_length, ~layer_mask))
+        {
+            Debug.DrawRay(transform.position, -Vector3.left * ray_length, Color.green);
+            Debug.Log("WALL!");
+            return true;
+        }
+        else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, ray_length, ~layer_mask))
+        {
+            Debug.DrawRay(transform.position, Vector3.left * ray_length, Color.green);
+            Debug.Log("WALL!");
+            return true;
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, -Vector3.left * ray_length, Color.red);
+            Debug.DrawRay(transform.position, -Vector3.right * ray_length, Color.red);
+            return false;
+        }
+        
+    }
+    public Vector3 WallAngle()
+    {
+        float ray_length = collider_component.bounds.size.y / 2 + .2f;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, ray_length, ~layer_mask)) ;
+        else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, ray_length, ~layer_mask));
+        return hit.normal;
+    }
     #endregion
 }

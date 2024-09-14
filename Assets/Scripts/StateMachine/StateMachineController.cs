@@ -12,6 +12,8 @@ public class StateController : MonoBehaviour
     public State walk = new Walk();
     public State sprint = new Sprint();
     public State jump = new Jump();
+    public State dive = new Dive();
+    public State duck = new Ducking();
 
     public void ChangeStateTo(State state)
     {

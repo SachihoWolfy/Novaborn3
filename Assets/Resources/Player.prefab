@@ -1074,6 +1074,7 @@ MonoBehaviour:
   move_speed: 10
   sprint_speed: 20
   jump_force: 30
+  air_control: 0.5
   input_direction: {x: 0, y: 0, z: 0}
 --- !u!114 &9021953741811879384
 MonoBehaviour:

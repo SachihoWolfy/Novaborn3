@@ -14,7 +14,8 @@ public class Idle : State
         Entity entity = controller.controlled_entity;
         if(!entity.IsGrounded()) controller.ChangeStateTo(controller.falling);
         if(controller.controlled_entity.input_direction != Vector3.zero) controller.ChangeStateTo(controller.walk);
-        if(Input.GetButtonDown("Jump")) controller.ChangeStateTo(controller.jump);
+        if (Input.GetKeyDown(KeyCode.C)) controller.ChangeStateTo(controller.duck);
+        if (Input.GetButtonDown("Jump")) controller.ChangeStateTo(controller.jump);
     }
     public override void FixedUpdateState(StateController controller)
     {
